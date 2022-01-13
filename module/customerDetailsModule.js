@@ -17,6 +17,7 @@ module.exports.getcustomerDetails = async (req, res, next) => {
 };
 
 module.exports.createCustomer = async (req, res, next) => {
+  
   const schema = Joi.object({
     name: Joi.string().min(4).max(50).required(),
     mail: Joi.string().min(6).max(50).email().required(),
@@ -31,7 +32,7 @@ module.exports.createCustomer = async (req, res, next) => {
     const salt = await bcrypt.genSalt(10);
     req.body.password = await bcrypt.hash(req.body.password, salt);
     
-    const customerDetails = new customerDetailsModel({
+    const customerDetails = new customerDetailsVar({
       name: req.body.name,
       mail: req.body.mail,
       password: req.body.password

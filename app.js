@@ -4,7 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongo = require("./shared/connect");
-const roomDetailsRouter = require("./routes/roomDetails");
+const furnitureDetailsRouter = require("./routes/furnitureDetails");
 const customerDetailsRouter = require("./routes/customerDetails");
 const cors = require("cors");
  
@@ -31,7 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/customerDetails', customerDetailsRouter )
-app.use('/roomDetails', roomDetailsRouter )
+app.use('/furnitureDetails', furnitureDetailsRouter )
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

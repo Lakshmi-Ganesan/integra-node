@@ -10,7 +10,7 @@ router.get(
 );
 router.post("/create", customerDetailsModule.createCustomer);
 router.post("/login", customerDetailsModule.login);
-router.get("/customerStatus", customerDetailsModule.createCustomer);
+
 
 
 
